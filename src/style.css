@@ -515,13 +515,6 @@
    z-index: 2;
  }
 
- /*.offer-item .juegos-image .game-image {
-      height: 160px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }*/
-
  .offer-details {
    padding: 1.5rem;
    display: flex;
@@ -766,9 +759,16 @@
    }
  }
 
+<<<<<<< HEAD
  @media screen and (max-width: 480px) {
+=======
+ @media screen and (max-width: 576px) {
+  .header-hidden{
+>>>>>>> 8bb4cc835efe57f165833017a61be00e1f4b88e7
 
-   /*Menu lateral o superior adaptado */
+    transform: translateY(-100%);
+  }
+     /*Menu lateral o superior adaptado */
    .main-nav {
      width: 100%;
      background-color: var(--dark);
