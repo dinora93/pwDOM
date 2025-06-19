@@ -174,7 +174,7 @@
    background:
      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
      url('https://res.cloudinary.com/dmnbaipjy/image/upload/v1750298050/mario__by_leork_dream_djkpc7j-pre_dti5ra.jpg') center/cover no-repeat fixed;
-   display: flex;
+             display: flex;
    align-items: center;
    justify-content: center;
    text-align: center;
@@ -857,4 +857,12 @@
     background-position: center;
     border-radius: 12px 12px 0 0;
   }
+    .parallax-bg {
+    background-image: url('https://res.cloudinary.com/dqstycwjr/image/upload/v1750363056/fondo_nkf1b4.avif');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+  }
+
  }
