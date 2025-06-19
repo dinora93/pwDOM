@@ -121,6 +121,7 @@ html {
 
     /* Carrito */
     .cart {
+      margin-left: 12px;
       position: relative;
     }
 

@@ -1,104 +1,106 @@
 import './style.css'
 const app = document.getElementById('app');
 
-    // Crear header con logo y navegación
-    const header = document.createElement('header');
-    header.className = 'game-header';
+// Crear header con logo y navegación
+const header = document.createElement('header');
+header.className = 'game-header';
 
-    // Logo de la tienda
-    const logo = document.createElement('div');
-    logo.className = 'logo';
-    logo.innerHTML = '<span>GAME</span>ZONE';
+// Logo de la tienda
+const logo = document.createElement('div');
+logo.className = 'logo';
+logo.innerHTML = '<span>GAME</span>ZONE';
 
-    // Menú principal
-    const nav = document.createElement('nav');
-    nav.className = 'main-nav';
+// Menú principal
+const nav = document.createElement('nav');
+nav.className = 'main-nav';
 
-    // Elementos del menú con iconos
-    const menuItems = [
-      { text: 'Inicio', icon: 'fa-home', href: '#', active: true },
-      { text: 'Nuevos', icon: 'fa-star', href: '#games-container' },
-      { text: 'Ofertas', icon: 'fa-tag', href: '#offers-container', badge: 'HOT' },
-      { text: 'Categorías', icon: 'fa-list', href: '#categories', dropdown: [
-        'Acción', 'Aventura', 'Deportes', 'RPG', 'Estrategia', 'Shooters'
-      ]}
-    ];
+// Elementos del menú con iconos
+const menuItems = [
+  { text: 'Inicio', icon: 'fa-home', href: '#', active: true },
+  { text: 'Nuevos', icon: 'fa-star', href: '#games-container' },
+  { text: 'Ofertas', icon: 'fa-tag', href: '#offers-container', badge: 'HOT' },
+  {
+    text: 'Categorías', icon: 'fa-list', href: '#categories', dropdown: [
+      'Acción', 'Aventura', 'Deportes', 'RPG', 'Estrategia', 'Shooters'
+    ]
+  }
+];
 
-    // Crear elementos del menú
-    const navList = document.createElement('ul');
-    navList.className = 'nav-list';
+// Crear elementos del menú
+const navList = document.createElement('ul');
+navList.className = 'nav-list';
 
-    menuItems.forEach(item => {
-      const listItem = document.createElement('li');
-      listItem.className = item.active ? 'active' : '';
-      
-      const link = document.createElement('a');
-      link.href = item.href;
-      link.innerHTML = `<i class="fas ${item.icon}"></i> ${item.text}`;
-      
-      if(item.badge) {
-        const badge = document.createElement('span');
-        badge.className = 'menu-badge';
-        badge.textContent = item.badge;
-        link.appendChild(badge);
-      }
-      
-      listItem.appendChild(link);
-      
-      if(item.dropdown) {
-        const dropdown = document.createElement('div');
-        dropdown.className = 'dropdown-content';
-        
-        item.dropdown.forEach(subItem => {
-          const subLink = document.createElement('a');
-          subLink.href = `#${subItem.toLowerCase()}`;
-          subLink.textContent = subItem;
-          dropdown.appendChild(subLink);
-        });
-        
-        listItem.appendChild(dropdown);
-        
-        listItem.addEventListener('mouseenter', () => {
-          dropdown.style.display = 'block';
-        });
-        
-        listItem.addEventListener('mouseleave', () => {
-          dropdown.style.display = 'none';
-        });
-      }
-      
-      navList.appendChild(listItem);
+menuItems.forEach(item => {
+  const listItem = document.createElement('li');
+  listItem.className = item.active ? 'active' : '';
+
+  const link = document.createElement('a');
+  link.href = item.href;
+  link.innerHTML = `<i class="fas ${item.icon}"></i> ${item.text}`;
+
+  if (item.badge) {
+    const badge = document.createElement('span');
+    badge.className = 'menu-badge';
+    badge.textContent = item.badge;
+    link.appendChild(badge);
+  }
+
+  listItem.appendChild(link);
+
+  if (item.dropdown) {
+    const dropdown = document.createElement('div');
+    dropdown.className = 'dropdown-content';
+
+    item.dropdown.forEach(subItem => {
+      const subLink = document.createElement('a');
+      subLink.href = `#${subItem.toLowerCase()}`;
+      subLink.textContent = subItem;
+      dropdown.appendChild(subLink);
     });
 
-    nav.appendChild(navList);
+    listItem.appendChild(dropdown);
 
-    // Carrito de compras
-    const cart = document.createElement('div');
-    cart.className = 'cart';
-    cart.innerHTML = `
+    listItem.addEventListener('mouseenter', () => {
+      dropdown.style.display = 'block';
+    });
+
+    listItem.addEventListener('mouseleave', () => {
+      dropdown.style.display = 'none';
+    });
+  }
+
+  navList.appendChild(listItem);
+});
+
+nav.appendChild(navList);
+
+// Carrito de compras
+const cart = document.createElement('div');
+cart.className = 'cart';
+cart.innerHTML = `
       <a href="#cart">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-counter">0</span>
       </a>
     `;
 
-    // Barra de búsqueda
-    const search = document.createElement('div');
-    search.className = 'search-bar';
-    search.innerHTML = `
+// Barra de búsqueda
+const search = document.createElement('div');
+search.className = 'search-bar';
+search.innerHTML = `
       <input type="text" placeholder="Buscar juegos...">
       <button><i class="fas fa-search"></i></button>
     `;
 
-    // Construir header
-    header.appendChild(logo);
-    header.appendChild(nav);
-    header.appendChild(search);
-    header.appendChild(cart);
+// Construir header
+header.appendChild(logo);
+header.appendChild(nav);
+header.appendChild(search);
+header.appendChild(cart);
 
-    // Contenido principal con parallax
-    const mainContent = document.createElement('main');
-    mainContent.innerHTML = `
+// Contenido principal con parallax
+const mainContent = document.createElement('main');
+mainContent.innerHTML = `
       <section class="hero-section">
         <div class="hero-content">
           <h1>Los mejores videojuegos al mejor precio</h1>
@@ -125,10 +127,10 @@ const app = document.getElementById('app');
       </section>
     `;
 
-    // Crear footer
-    const footer = document.createElement('footer');
-    footer.className = 'game-footer';
-    footer.innerHTML = `
+// Crear footer
+const footer = document.createElement('footer');
+footer.className = 'game-footer';
+footer.innerHTML = `
       <div class="footer-content">
         <div class="footer-links">
           <a href="#">Términos del servicio</a>
@@ -143,69 +145,75 @@ const app = document.getElementById('app');
       </div>
     `;
 
-    // Agregar todo al DOM
-    app.appendChild(header);
-    app.appendChild(mainContent);
-    app.appendChild(footer);
+// Agregar todo al DOM
+app.appendChild(header);
+app.appendChild(mainContent);
+// Activar scroll suave al hacer clic en "Ver catálogo"
+document.querySelector('.btn').addEventListener('click', () => {
+  document.getElementById('games-container').scrollIntoView({ behavior: 'smooth' });
+});
 
-    // 6 Juegos con información detallada
-    const games = [
-      { 
-        title: 'Cyberpunk 2077', 
-        price: '$49.99',
-        description: 'Sumérgete en Night City, una metrópolis obsesionada con el poder, la moda y las modificaciones corporales. Como V, un mercenario fuera de la ley, tendrás acceso a un arsenal mejorado y habilidades especiales.',
-        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750351014/Cyberpunk_2077_ndqrzj.png',
-        genre: 'RPG Futurista',
-        features: ['Mundo abierto', 'Personalización extrema', 'Historia no lineal']
-      },
-      { 
-        title: 'Elden Ring', 
-        price: '$59.99',
-        description: 'Un juego de fantasía épica donde explorarás las Tierras Intermedias. Creado por Hidetaka Miyazaki y George R.R. Martin, combina el combate desafiante de Souls con un vasto mundo abierto.',
-        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/2_yb2ofv.png',
-        genre: 'Souls-like',
-        features: ['Mundo abierto', 'Combate desafiante', 'Jefes épicos']
-      },
-      { 
-        title: 'God of War', 
-        price: '$39.99',
-        description: 'Kratos y su hijo Atreus se embarcan en un viaje a través de los reinos nórdicos. Una historia emocionante sobre paternidad con un combate brutal y gráficos impresionantes.',
-        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/3_rp8fbj.png',
-        genre: 'Aventura Épica',
-        features: ['Historia emocionante', 'Combate táctico', 'Mundo interconectado']
-      },
-      { 
-        title: 'Horizon Forbidden West', 
-        price: '$54.99',
-        description: 'Aloy explora el Oeste Prohibido, un territorio lleno de misterios y máquinas asombrosas. Un mundo abierto impresionante con una narrativa envolvente y combates dinámicos.',
-        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/4_iqeqlu.png',
-        genre: 'Aventura',
-        features: ['Mundo abierto detallado', 'Combate estratégico', 'Historia profunda']
-      },
-      { 
-        title: 'The Legend of Zelda: Tears of the Kingdom', 
-        price: '$59.99',
-        description: 'Link explora los cielos y las profundidades de Hyrule en esta secuela de Breath of the Wild. Nuevas habilidades y un mundo expandido ofrecen infinitas posibilidades.',
-        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345712/5_nkp1us.png',
-        genre: 'Aventura',
-        features: ['Exploración libre', 'Física interactiva', 'Creatividad ilimitada']
-      },
-      { 
-        title: 'Starfield', 
-        price: '$69.99',
-        description: 'El primer nuevo universo en 25 años de Bethesda Game Studios. Explora las estrellas y descubre los secretos de la galaxia en este RPG espacial épico.',
-        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345712/6_sqmruh.png',
-        genre: 'RPG Espacial',
-        features: ['Más de 1000 planetas', 'Combate espacial', 'Historia profunda']
-      }
-    ];
 
-    // Crear las cards de juegos (sección principal)
-    const gamesContainer = document.getElementById('games-container');
-    games.forEach(game => {
-      const gameCard = document.createElement('div');
-      gameCard.className = 'game-card';
-      gameCard.innerHTML = `
+app.appendChild(footer);
+
+// 6 Juegos con información detallada
+const games = [
+  {
+    title: 'Cyberpunk 2077',
+    price: '$49.99',
+    description: 'Sumérgete en Night City, una metrópolis obsesionada con el poder, la moda y las modificaciones corporales. Como V, un mercenario fuera de la ley, tendrás acceso a un arsenal mejorado y habilidades especiales.',
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750351014/Cyberpunk_2077_ndqrzj.png',
+    genre: 'RPG Futurista',
+    features: ['Mundo abierto', 'Personalización extrema', 'Historia no lineal']
+  },
+  {
+    title: 'Elden Ring',
+    price: '$59.99',
+    description: 'Un juego de fantasía épica donde explorarás las Tierras Intermedias. Creado por Hidetaka Miyazaki y George R.R. Martin, combina el combate desafiante de Souls con un vasto mundo abierto.',
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/2_yb2ofv.png',
+    genre: 'Souls-like',
+    features: ['Mundo abierto', 'Combate desafiante', 'Jefes épicos']
+  },
+  {
+    title: 'God of War',
+    price: '$39.99',
+    description: 'Kratos y su hijo Atreus se embarcan en un viaje a través de los reinos nórdicos. Una historia emocionante sobre paternidad con un combate brutal y gráficos impresionantes.',
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/3_rp8fbj.png',
+    genre: 'Aventura Épica',
+    features: ['Historia emocionante', 'Combate táctico', 'Mundo interconectado']
+  },
+  {
+    title: 'Horizon Forbidden West',
+    price: '$54.99',
+    description: 'Aloy explora el Oeste Prohibido, un territorio lleno de misterios y máquinas asombrosas. Un mundo abierto impresionante con una narrativa envolvente y combates dinámicos.',
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/4_iqeqlu.png',
+    genre: 'Aventura',
+    features: ['Mundo abierto detallado', 'Combate estratégico', 'Historia profunda']
+  },
+  {
+    title: 'The Legend of Zelda: Tears of the Kingdom',
+    price: '$59.99',
+    description: 'Link explora los cielos y las profundidades de Hyrule en esta secuela de Breath of the Wild. Nuevas habilidades y un mundo expandido ofrecen infinitas posibilidades.',
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345712/5_nkp1us.png',
+    genre: 'Aventura',
+    features: ['Exploración libre', 'Física interactiva', 'Creatividad ilimitada']
+  },
+  {
+    title: 'Starfield',
+    price: '$69.99',
+    description: 'El primer nuevo universo en 25 años de Bethesda Game Studios. Explora las estrellas y descubre los secretos de la galaxia en este RPG espacial épico.',
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345712/6_sqmruh.png',
+    genre: 'RPG Espacial',
+    features: ['Más de 1000 planetas', 'Combate espacial', 'Historia profunda']
+  }
+];
+
+// Crear las cards de juegos (sección principal)
+const gamesContainer = document.getElementById('games-container');
+games.forEach(game => {
+  const gameCard = document.createElement('div');
+  gameCard.className = 'game-card';
+  gameCard.innerHTML = `
         <div class="card-inner">
           <div class="card-front">
             <div class="game-image" style="background-image: url('${game.image}')"></div>
@@ -225,10 +233,10 @@ const app = document.getElementById('app');
           </div>
         </div>
       `;
-      gamesContainer.appendChild(gameCard);
-    });
+  gamesContainer.appendChild(gameCard);
+});
 
-   const juegos = [
+const juegos = [
   {
     title: "The Legend of Zelda: Echoes of Wisdom",
     price: '$59.99',
@@ -279,20 +287,20 @@ const app = document.getElementById('app');
   }
 ];
 
-    // Crear ofertas especiales (sección carrusel)
-    const offersContainer = document.getElementById('offers-container');
-    juegos.forEach((juegos, index) => {
-      const discount = 30 + index * 5;
-      const offerItem = document.createElement('div');
-      offerItem.className = 'offer-item';
-      offerItem.innerHTML = `
+// Crear ofertas especiales (sección carrusel)
+const offersContainer = document.getElementById('offers-container');
+juegos.forEach((juegos, index) => {
+  const discount = 30 + index * 5;
+  const offerItem = document.createElement('div');
+  offerItem.className = 'offer-item';
+  offerItem.innerHTML = `
         <div class="offer-badge">-${discount}%</div>
         <div class="juegos-image" style="background-image: url('${juegos.image}')"></div>
         <div class="offer-details">
           <h3>${juegos.title}</h3>
           <div class="price-container">
             <span class="old-price">${juegos.price}</span>
-            <span class="new-price">$${(parseFloat(juegos.price.slice(1)) * (1 - discount/100)).toFixed(2)}</span>
+            <span class="new-price">$${(parseFloat(juegos.price.slice(1)) * (1 - discount / 100)).toFixed(2)}</span>
           </div>
           <div class="platform-tags">
             <span>PS5</span>
@@ -302,40 +310,40 @@ const app = document.getElementById('app');
           <button class="offer-btn">Añadir al carrito</button>
         </div>
       `;
-      offersContainer.appendChild(offerItem);
-    });
+  offersContainer.appendChild(offerItem);
+});
 
-    // Efecto parallax para el fondo
-    window.addEventListener('scroll', () => {
-      const scrollPosition = window.pageYOffset;
-      const parallaxBg = document.querySelector('.parallax-bg');
-      if(parallaxBg) {
-        parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-      }
-    });
+// Efecto parallax para el fondo
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.pageYOffset;
+  const parallaxBg = document.querySelector('.parallax-bg');
+  if (parallaxBg) {
+    parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+  }
+});
 
-    // Funcionalidad del carrusel de ofertas
-    const scroller = document.querySelector('.offer-scroller');
-    const scrollLeftBtn = document.querySelector('.scroll-btn.left');
-    const scrollRightBtn = document.querySelector('.scroll-btn.right');
+// Funcionalidad del carrusel de ofertas
+const scroller = document.querySelector('.offer-scroller');
+const scrollLeftBtn = document.querySelector('.scroll-btn.left');
+const scrollRightBtn = document.querySelector('.scroll-btn.right');
 
-    if(scrollLeftBtn && scrollRightBtn) {
-      scrollLeftBtn.addEventListener('click', () => {
-        scroller.scrollBy({ left: -300, behavior: 'smooth' });
-      });
+if (scrollLeftBtn && scrollRightBtn) {
+  scrollLeftBtn.addEventListener('click', () => {
+    scroller.scrollBy({ left: -300, behavior: 'smooth' });
+  });
 
-      scrollRightBtn.addEventListener('click', () => {
-        scroller.scrollBy({ left: 300, behavior: 'smooth' });
-      });
-    }
+  scrollRightBtn.addEventListener('click', () => {
+    scroller.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+}
 
-    // Efecto para el contador del carrito
-    setInterval(() => {
-      const counter = document.querySelector('.cart-counter');
-      if(counter) {
-        const randomNum = Math.floor(Math.random() * 10);
-        counter.textContent = randomNum;
-        counter.style.animation = 'bounce 0.3s';
-        setTimeout(() => counter.style.animation = '', 300);
-      }
-    }, 3000);
+// Efecto para el contador del carrito
+setInterval(() => {
+  const counter = document.querySelector('.cart-counter');
+  if (counter) {
+    const randomNum = Math.floor(Math.random() * 10);
+    counter.textContent = randomNum;
+    counter.style.animation = 'bounce 0.3s';
+    setTimeout(() => counter.style.animation = '', 300);
+  }
+}, 3000);
