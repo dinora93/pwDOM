@@ -154,7 +154,7 @@ const app = document.getElementById('app');
         title: 'Cyberpunk 2077', 
         price: '$49.99',
         description: 'Sumérgete en Night City, una metrópolis obsesionada con el poder, la moda y las modificaciones corporales. Como V, un mercenario fuera de la ley, tendrás acceso a un arsenal mejorado y habilidades especiales.',
-        image: 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750351014/Cyberpunk_2077_ndqrzj.png',
         genre: 'RPG Futurista',
         features: ['Mundo abierto', 'Personalización extrema', 'Historia no lineal']
       },
@@ -162,7 +162,7 @@ const app = document.getElementById('app');
         title: 'Elden Ring', 
         price: '$59.99',
         description: 'Un juego de fantasía épica donde explorarás las Tierras Intermedias. Creado por Hidetaka Miyazaki y George R.R. Martin, combina el combate desafiante de Souls con un vasto mundo abierto.',
-        image: 'https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/2_yb2ofv.png',
         genre: 'Souls-like',
         features: ['Mundo abierto', 'Combate desafiante', 'Jefes épicos']
       },
@@ -170,7 +170,7 @@ const app = document.getElementById('app');
         title: 'God of War', 
         price: '$39.99',
         description: 'Kratos y su hijo Atreus se embarcan en un viaje a través de los reinos nórdicos. Una historia emocionante sobre paternidad con un combate brutal y gráficos impresionantes.',
-        image: 'https://images.unsplash.com/photo-1630431346172-c85f5e15a6b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/3_rp8fbj.png',
         genre: 'Aventura Épica',
         features: ['Historia emocionante', 'Combate táctico', 'Mundo interconectado']
       },
@@ -178,7 +178,7 @@ const app = document.getElementById('app');
         title: 'Horizon Forbidden West', 
         price: '$54.99',
         description: 'Aloy explora el Oeste Prohibido, un territorio lleno de misterios y máquinas asombrosas. Un mundo abierto impresionante con una narrativa envolvente y combates dinámicos.',
-        image: 'https://images.unsplash.com/photo-1648737155328-691d6f55bacd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345711/4_iqeqlu.png',
         genre: 'Aventura',
         features: ['Mundo abierto detallado', 'Combate estratégico', 'Historia profunda']
       },
@@ -186,7 +186,7 @@ const app = document.getElementById('app');
         title: 'The Legend of Zelda: Tears of the Kingdom', 
         price: '$59.99',
         description: 'Link explora los cielos y las profundidades de Hyrule en esta secuela de Breath of the Wild. Nuevas habilidades y un mundo expandido ofrecen infinitas posibilidades.',
-        image: 'https://images.unsplash.com/photo-1682686580391-615b4b4db1ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345712/5_nkp1us.png',
         genre: 'Aventura',
         features: ['Exploración libre', 'Física interactiva', 'Creatividad ilimitada']
       },
@@ -194,7 +194,7 @@ const app = document.getElementById('app');
         title: 'Starfield', 
         price: '$69.99',
         description: 'El primer nuevo universo en 25 años de Bethesda Game Studios. Explora las estrellas y descubre los secretos de la galaxia en este RPG espacial épico.',
-        image: 'https://images.unsplash.com/photo-1693834044396-35b5b4f3d0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+        image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750345712/6_sqmruh.png',
         genre: 'RPG Espacial',
         features: ['Más de 1000 planetas', 'Combate espacial', 'Historia profunda']
       }
@@ -228,20 +228,71 @@ const app = document.getElementById('app');
       gamesContainer.appendChild(gameCard);
     });
 
+   const juegos = [
+  {
+    title: "The Legend of Zelda: Echoes of Wisdom",
+    price: '$59.99',
+    description: "Explora una nueva aventura con Zelda como protagonista en esta entrega única para Nintendo Switch.",
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750350766/Zelda_u0e9jh.png',
+    genre: "Aventura",
+    features: ["Modo historia", "Exploración libre", "Rompecabezas inteligentes"]
+  },
+  {
+    title: "Donkey Kong Country Returns HD",
+    price: '$49.99',
+    description: "El clásico Donkey Kong regresa con gráficos en alta definición y nuevos niveles exclusivos.",
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750350211/Donkey_Kong_Country_Returns_HD_wqj243.png',
+    genre: "Plataformas",
+    features: ["Cooperativo local", "Niveles desafiantes", "Ambientes selváticos"]
+  },
+  {
+    title: "Resident Evil 3",
+    price: '$39.99',
+    description: "Revive el horror con gráficos renovados en esta versión para PlayStation 5 del clásico Resident Evil 3.",
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750350768/Resident_Evil_3_ibaveq.png',
+    genre: "Terror y acción",
+    features: ["Gráficos 4K", "Modo campaña", "Némesis como jefe principal"]
+  },
+  {
+    title: "Stellar Blade",
+    price: '$69.99',
+    description: "Acción intensa en un futuro distópico con una heroína letal en esta exclusiva de PlayStation 5.",
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750350204/Stellar_Blade_2_datys8.png',
+    genre: "Acción y ciencia ficción",
+    features: ["Combate rápido", "Escenarios futuristas", "Narrativa cinematográfica"]
+  },
+  {
+    title: "Astro Bot",
+    price: '$59.99',
+    description: "Vive una aventura vibrante y colorida con Astro Bot en una experiencia optimizada para PS5.",
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750350211/Astro_Bot_gwduij.png',
+    genre: "Plataformas y aventura",
+    features: ["Uso del DualSense", "Niveles creativos", "Ideal para toda la familia"]
+  },
+  {
+    title: "Super Mario Bros. Wonder",
+    price: '$59.99',
+    description: "Mario y sus amigos exploran un mundo lleno de sorpresas y transformaciones en esta nueva entrega para Nintendo Switch.",
+    image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750350769/Super_Mario_Bros._Wonder_jdsx4k.png',
+    genre: "Plataformas",
+    features: ["Modo cooperativo", "Transformaciones únicas", "Mundos dinámicos"]
+  }
+];
+
     // Crear ofertas especiales (sección carrusel)
     const offersContainer = document.getElementById('offers-container');
-    games.forEach((game, index) => {
+    juegos.forEach((juegos, index) => {
       const discount = 30 + index * 5;
       const offerItem = document.createElement('div');
       offerItem.className = 'offer-item';
       offerItem.innerHTML = `
         <div class="offer-badge">-${discount}%</div>
-        <div class="game-image" style="background-image: url('${game.image}')"></div>
+        <div class="juegos-image" style="background-image: url('${juegos.image}')"></div>
         <div class="offer-details">
-          <h3>${game.title}</h3>
+          <h3>${juegos.title}</h3>
           <div class="price-container">
-            <span class="old-price">${game.price}</span>
-            <span class="new-price">$${(parseFloat(game.price.slice(1)) * (1 - discount/100)).toFixed(2)}</span>
+            <span class="old-price">${juegos.price}</span>
+            <span class="new-price">$${(parseFloat(juegos.price.slice(1)) * (1 - discount/100)).toFixed(2)}</span>
           </div>
           <div class="platform-tags">
             <span>PS5</span>

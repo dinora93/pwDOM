@@ -392,6 +392,13 @@
       overflow: hidden;
     }
 
+  .juegos-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.3s;
+    }
+
     .offers-section::before {
       content: '';
       position: absolute;
@@ -469,7 +476,7 @@
     }
 
     .offer-item {
-      min-width: 280px;
+      width: 300px;
       background: rgba(43, 45, 66, 0.7);
       border-radius: 12px;
       overflow: hidden;
@@ -502,15 +509,19 @@
       z-index: 2;
     }
 
-    .offer-item .game-image {
+    /*.offer-item .juegos-image .game-image {
       height: 160px;
       background-size: cover;
       background-position: center;
       position: relative;
-    }
+    }*/
 
     .offer-details {
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
     }
 
     .offer-details h3 {
