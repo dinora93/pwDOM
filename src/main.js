@@ -161,7 +161,7 @@ const games = [
   {
     title: 'Cyberpunk 2077',
     price: '$49.99',
-    description: 'Sumérgete en Night City, una metrópolis obsesionada con el poder, la moda y las modificaciones corporales. Como V, un mercenario fuera de la ley, tendrás acceso a un arsenal mejorado y habilidades especiales.',
+    description: 'Sumérgete en Night City, una metrópolis obsesionada con el poder, la moda y las modificaciones corporales.',
     image: 'https://res.cloudinary.com/dqstycwjr/image/upload/v1750351014/Cyberpunk_2077_ndqrzj.png',
     genre: 'RPG Futurista',
     features: ['Mundo abierto', 'Personalización extrema', 'Historia no lineal']

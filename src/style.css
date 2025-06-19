@@ -766,7 +766,7 @@
    }
  }
 
- @media screen and (max-width: 576px) {
+ @media screen and (max-width: 480px) {
 
    /*Menu lateral o superior adaptado */
    .main-nav {
@@ -857,12 +857,22 @@
     background-position: center;
     border-radius: 12px 12px 0 0;
   }
-    .parallax-bg {
-    background-image: url('https://res.cloudinary.com/dqstycwjr/image/upload/v1750363056/fondo_nkf1b4.avif');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: top center;
+  .games-section {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
 
-  }
-
+.parallax-bg {
+  position: fixed;  /* Cambiado de absolute a fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+  url('https://res.cloudinary.com/dmnbaipjy/image/upload/v1750304850/old-video-game-ab3ajvzqsy7dbeyy_ig7kss.jpg') center/cover no-repeat;
+  z-index: -1;
+  opacity: 0.7;
+  pointer-events: none; /* Permite interacción con elementos debajo */
+}
  }
