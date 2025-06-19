@@ -515,13 +515,6 @@
    z-index: 2;
  }
 
- /*.offer-item .juegos-image .game-image {
-      height: 160px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }*/
-
  .offer-details {
    padding: 1.5rem;
    display: flex;
@@ -768,7 +761,7 @@
 
  @media screen and (max-width: 576px) {
   .header-hidden{
-    
+
     transform: translateY(-100%);
   }
      /*Menu lateral o superior adaptado */
