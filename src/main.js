@@ -17,8 +17,8 @@ const app = document.getElementById('app');
     // Elementos del menú con iconos
     const menuItems = [
       { text: 'Inicio', icon: 'fa-home', href: '#', active: true },
-      { text: 'Nuevos', icon: 'fa-star', href: '#new' },
-      { text: 'Ofertas', icon: 'fa-tag', href: '#offers', badge: 'HOT' },
+      { text: 'Nuevos', icon: 'fa-star', href: '#games-container' },
+      { text: 'Ofertas', icon: 'fa-tag', href: '#offers-container', badge: 'HOT' },
       { text: 'Categorías', icon: 'fa-list', href: '#categories', dropdown: [
         'Acción', 'Aventura', 'Deportes', 'RPG', 'Estrategia', 'Shooters'
       ]}
