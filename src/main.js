@@ -147,12 +147,32 @@ footer.innerHTML = `
 
 // Agregar todo al DOM
 app.appendChild(header);
+// Detectar si es una pantalla móvil
+const gameHeader = document.querySelector('.game-header');
+if (window.matchMedia('(max-width: 576px)').matches) {
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Desplazamiento hacia abajo → ocultar header
+      gameHeader.classList.add('header-hidden');
+    } else {
+      // Desplazamiento hacia arriba → mostrar header
+      gameHeader.classList.remove('header-hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+}
+
 app.appendChild(mainContent);
+
 // Activar scroll suave al hacer clic en "Ver catálogo"
 document.querySelector('.btn').addEventListener('click', () => {
   document.getElementById('games-container').scrollIntoView({ behavior: 'smooth' });
 });
-
 
 app.appendChild(footer);
 
@@ -347,24 +367,3 @@ setInterval(() => {
     setTimeout(() => counter.style.animation = '', 300);
   }
 }, 3000);
-
-const gameHeader = document.querySelector('.game-header');
-
-// Detectar si es una pantalla móvil
-if (window.matchMedia('(max-width: 576px)').matches) {
-  let lastScrollTop = 0;
-
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-      // Desplazamiento hacia abajo → ocultar header
-      gameHeader.classList.add('header-hidden');
-    } else {
-      // Desplazamiento hacia arriba → mostrar header
-      gameHeader.classList.remove('header-hidden');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-}
